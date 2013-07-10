@@ -2,6 +2,8 @@ var express = require('express');
 
 var app = express.createServer(express.logger());
 
+var fs = require('fs');
+
 app.get('/', function(request, response) {
   fs.readFileSync('index.html', {encoding: 'utf-8'}, function (err, data) {
     if (err) throw err;
